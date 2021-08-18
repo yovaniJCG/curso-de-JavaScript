@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const b = [1, true, "Hola", ["A", "B", "C"]];
+    console.log(b[3][0]);//aqui estoy accediendo a la tercera posicion del arreglo y accedo a la pocicion 0 .
+
+    /**************OTRA FORMA*******************/
+    const c = Array.of("X", "Y", "Z", "8", "9", "7");
+
+    console.log(c);
+
+    const colores = ["Rojo", "Verde", "Amarillo", "Azul"];
+
+    colores.forEach(function (el, index) {
+      console.log(`<li id="${index}">${el}</li>`);
+    })
+  </script>
+
+</body>
+
+</html>

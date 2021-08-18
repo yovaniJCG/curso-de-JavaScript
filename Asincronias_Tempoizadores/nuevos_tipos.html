@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let id = Symbol("id");
+    let id2 = Symbol("id2");
+
+    console.log(id === id2);
+    console.log(id, id2);
+
+
+    const NAME = Symbol("Nombre");
+    const SALUDAR = Symbol("SALUDAR");
+
+    const persona = {
+      [NAME]: "Juan",
+      edad: 35
+    }
+
+    console.log(persona);
+
+    persona.NAME = "Juan Yovany Gomez";
+    console.log(persona);
+
+    console.log(persona.NAME);
+    console.log(persona[NAME]);
+
+
+    persona[SALUDAR] = function () {
+      console.log("HOLA");
+
+    }
+
+    console.log(persona);
+    persona[SALUDAR]();
+
+
+    for (let propiedad in persona) {
+      console.log(propiedad);
+      console.log(persona[propiedad]);
+    }
+
+    console.log(Object.getOwnPropertySymbols(persona));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #anuncio {
+      background-color: rgb(47, 43, 82);
+      color: antiquewhite;
+      font-size: 24px;
+      padding-top: 65px;
+      text-align: center;
+      margin: 10%;
+    }
+  </style>
+  <script src="js/jquery-3.5.1.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $("#anuncio").width(500)
+        .height(100)
+        .text("¡vende!")//este es el texto que queremos que aparesca.
+        .hide()//este oculta el elemento
+        .fadeIn(10000);//este es para que me muestre poco a poco este anuncio
+    });
+  </script>
+</head>
+
+<body>
+
+  <div id="anuncio">
+    Compra!!
+  </div>
+
+
+  <!-- <script>
+    let anuncio = document.getElementById("anuncio");
+    anuncio.style.width = "500px";
+    anuncio.style.height = "100px";
+    anuncio.style.textAlign = "center";
+    anuncio.style.paddingTop = "65px";
+    anuncio.innerHTML = "¡Vende!";
+  </script>-->
+
+</body>
+
+</html>

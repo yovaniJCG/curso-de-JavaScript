@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let mapa = new Map();
+    mapa.set("Nombre", "Juan");
+    mapa.set("Apellido", "Gomez");
+    mapa.set("Edad", 21);
+
+
+    console.log(mapa);
+    console.log(mapa.size);
+    console.log(mapa.has("Nombre"));
+
+    //para que me muestre el odjeto que quiera
+    console.log(mapa.get("Nombre"));
+
+    //si quiero cambiar el valor de una objeto
+    mapa.set("Nombre", "Castillo Gomez");
+    console.log(mapa.get("Nombre"));
+
+    //para eliminar un odjeto
+    mapa.delete("Edad");
+    console.log(mapa);
+
+    //para recorrer un mapa
+    for (let [key, value] of mapa) {
+      console.log(`Llave: ${key},  Valor: ${value}`);
+    }
+    /**************************************/
+    const mapa2 = new Map([
+      ["nombre", "Juan"],
+      ["edad", "21"],
+      ["animal", "perro"],
+      [null, "nulo"]
+    ]);
+
+    console.log(mapa2);
+
+    const llavesmapa2 = [...mapa2.keys()];
+    const valoresmapa2 = [...mapa2.values()];
+
+    console.log(llavesmapa2);
+    console.log(valoresmapa2);
+
+
+
+
+  </script>
+</body>
+
+</html>

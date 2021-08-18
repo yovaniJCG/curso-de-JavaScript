@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let contador = 0;
+
+    while (contador < 10) {
+      console.log(contador);
+      contador++;
+    }
+
+
+    let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+
+    for (let i = 0; i < numeros.length; i++) {
+      console.log(numeros[i]);
+    }
+    /******************************************************************/
+
+    const yova = {
+      nombre: "Juan",
+      Apellido: "Yovani",
+      Edad: 21
+    }
+    //este me permite recorrer cada una de las propiedades de un odjeto primitivo
+    for (const propiedad in yova) {
+      console.log(`${propiedad}  ${yova[propiedad]}`);
+    }
+
+    /************************************************************************/
+    //este se ocupa mas en arreglos.
+    for (const elemento of numeros) {
+      console.log(elemento);
+    }
+
+  </script>
+</body>
+
+</html>

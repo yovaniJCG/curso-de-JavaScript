@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    let repetir = "si";
+
+
+    function sumar(num1, num2) {
+      alert("la suma es: " + (num1 + num2));
+    }
+
+    function restar(num1, num2) {
+      alert("la resta es: " + (num1 - num2));
+    }
+
+    function multiplicar(num1, num2) {
+      alert("la multiplicacion es: " + (num1 * num2));
+    }
+
+    function dividir(num1, num2) {
+      alert("la divicion es: " + (num1 / num2));
+    }
+    do {
+      let operacion = prompt("¿Que operacion deseas realizar?");
+
+      let nume1 = Number(prompt("Ingresa el primer numero"));
+
+      let nume2 = parseInt(prompt("Ingresa el segundo numero"));
+
+
+      /****************se puede hacer de las dos formas****/
+      /*if (operacion == "sumar") {
+        sumar(Number(nume1), Number(nume2));
+      }*/
+
+      if (operacion == "sumar") {
+        sumar(nume1, nume2);
+      } else if (operacion == "restar") {
+        restar(nume1, nume2);
+      } else if (operacion == "multiplicar") {
+        multiplicar(nume1, nume2);
+      } else if (operacion == "dividir") {
+        dividir(nume1, nume2);
+      } else {
+        alert("Lo sentimos operacion no esta diponible");
+      }
+
+      repetir = prompt("Deceas hacer otra operacion");
+    } while (repetir == "si")
+
+    alert("Gracias por preferirnos");
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

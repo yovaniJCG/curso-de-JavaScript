@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //el reject me rechasa la promesa si ocurre algun error
+    function cuadradoPromise(value) {
+      if (typeof value !== "number") return Promise.reject("El valor ingresado no es un numero");
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve({
+            value,
+            result: value * value
+          });
+        }, 0 | Math.random() * 1000);
+      });
+    }
+    //con async le estamos diciendo que sera una funcion asincrona.
+    async function AsincronaDeclarada() {
+      try {
+        console.log("Inicio Async Function");
+        let obj = await cuadradoPromise(0);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(1);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(2);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(3);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(4);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(5);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        console.log("Fin AsyncDeclarada");
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    AsincronaDeclarada();
+
+    /*************************************************/
+
+    const functionayncronaExpresada = async () => {
+      try {
+        console.log("Inicio Async Function");
+        let obj = await cuadradoPromise(6);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(7);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(8);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(9);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(10);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        obj = await cuadradoPromise(11);
+        console.log(`Async Funtion: ${obj.value}, ${obj.result}`);
+
+        console.log("Fin AsyncExpresada");
+      } catch (err) {
+        console.error(err);
+      }
+
+    }
+
+    functionayncronaExpresada();
+
+  </script>
+
+</body>
+
+</html>

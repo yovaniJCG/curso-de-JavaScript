@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    function estaEsUnaFuncion() {
+      console.log("uno");
+      console.log("dos");
+      console.log("tres");
+    }
+
+    //estaEsUnaFuncion();//aqui estoy llmando la funcion
+    /*********************************************************************************/
+    //Una forma de hacer la funcion con parametros
+    function saludar(nombre, edad) {
+      console.log(`Hola mi nombre es ${nombre} y tengo ${edad} Años`);
+    }
+
+    saludar("Juan", 20);//aqui le doy valor a los parametros que le di a la funcion. sludar(nombre, edad).
+    /****************************************************************************************/
+    //Esta es otra forma que se puede realizar la funciones con parametros
+    function saludar2(nombre = "Yovani", edad = 21) {
+      console.log(`Hola mi nombre es ${nombre} y tengo ${edad} Años`);
+    }
+
+    saludar2();
+
+    declarada();
+    function declarada() {
+      console.log("Aqui voy a ver si es verdad esta funcion si permite que pueda ser llmada antes y despues de ser declarada");
+    }
+    declarada();
+
+    //Funcion Anonima
+
+    const funcionExpresada = function () {
+      console.log("Con esta funcion no la podemos llamar antes por que nos a dar error solo se puede llmar despues que se declaro");
+    }
+
+    funcionExpresada();
+
+
+
+
+  </script>
+
+</body>
+
+</html>

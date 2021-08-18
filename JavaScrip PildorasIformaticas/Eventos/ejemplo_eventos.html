@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Introducción a eventos</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    body {
+      background-color: #334873;
+      color: #FFF;
+    }
+
+    #principal {
+      width: 60%;
+      margin: auto;
+    }
+
+    a {
+      color: #FFF;
+      font: bold 20px Verdana, Geneva, sans-serif;
+    }
+  </style>
+  <script src="../jquery/js/jquery-3.5.1.min.js"></script>
+  <script>
+
+    $(document).ready(function () {
+
+      $("a").mouseover(function () {
+        var mensaje = "<p>Estas pasando el raton por encima</p>";
+
+        $("#principal").append(mensaje);
+
+      });
+
+      $("#el_boton").click(function () {
+        $(this).val("para de hacer click");
+      });
+
+    });
+
+  </script>
+</head>
+
+<body>
+
+  <div id="principal">
+
+    <h1>Introducción a eventos</h1>
+
+    <p><a href="#">Un link</a></p>
+
+    <form action="#" method="get">
+      <fieldset>
+        <legend>Formulario</legend>
+        <p>
+          <input name="button" type="button" id="el_boton" value="Un boton">
+        </p>
+        <p><input name="textfield" type="text" id="el_campo"></p>
+      </fieldset>
+    </form>
+
+  </div>
+
+
+</body>
+
+</html>

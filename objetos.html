@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const b = {}
+    console.log(b);
+    /********OTRA FORMA*********/
+    const c = new Object();
+    console.log(c);
+
+    /****************************/
+    /*********objeto con difrentes propiedades******/
+    const jon = {
+      nombre: "Juan",
+      apellido: "Gomez",
+      edad: "21",
+      pasatiempos: ["Musica", "Estudiar", "correr"],
+      soltero: false,
+      contacto: {
+        email: "gomezcastillo@gmail.com",
+        Tel: "99582020",
+        Fasceboock: "Yovani Gomez",
+      },
+      saludar: function () {
+        console.log("Hola :)");
+      },
+      decirMiNombre: function () {
+        console.log(`Hola me llamo ${this.nombre} ${this.apellido} y me puedes contactar a mi correo ${this.contacto.email}`);
+      }
+    }
+
+    console.log(jon.nombre);//aqui podemos llamar a los atributos con el nombre del objeto seguido de punto y el atributo que queramos imprimir.
+
+    /******Para llamar el arreglo que esta dentro del objeto********/
+    console.log(jon.pasatiempos);
+    console.log(jon.pasatiempos[1]);//asi accedo a un elemnto dentro del arreglo.dentro de un objjeto.
+
+
+    /*******PARA ACCEDER A UN ODJETO QUE ESTA DENTRO DE OTRO ODJETO**/
+    console.log(jon.contacto.Tel);
+
+
+    /********Y PARA ACCEDER A LA FUNCION QUE ESTA DENTRO DEL OBJETO***/
+    jon.saludar();
+    jon.decirMiNombre();
+  </script>
+</body>
+
+</html>

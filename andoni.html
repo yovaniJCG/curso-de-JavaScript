@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    let sueldo_año = 8000;
+    let bono = 100;
+    let meses_año = 12;
+    let cantidad_dias_año = 365;
+
+    const calcular_sueldo_diario = () => {
+
+      total_sueldo_diario = (sueldo_año - (bono * meses_año)) / cantidad_dias_año;
+      console.log(`El sueldo total que gana diario es de  ${Math.round(total_sueldo_diario)} `);
+    }
+
+    calcular_sueldo_diario();
+
+  </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

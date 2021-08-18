@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //los set son paresidos a los areglos solo que estos permieten valores unicos si algun valor se repite el lo dicrimina y no lo toma encuanta o sea que solo toma uno.
+    const set = new Set([1, 2, 3, 4, 5, true, false, false, {}, {}, "hola", "HOLA"]);
+
+    console.log(set);
+
+    //para contar cuantos elementos tiene el set
+    console.log(set.size);
+
+    const set2 = new Set();
+    set2.add(1);
+    set2.add(2);
+    set2.add(2);
+    set2.add(3);
+    set2.add(true);
+    set2.add(true);
+    set2.add(false);
+    set2.add({});
+
+    console.log(set2);
+    console.log("Recorriendo set");
+    for (item of set) {
+      console.log(item);
+    }
+
+    console.log("Recorriendo set2")
+    set2.forEach(item => console.log(item));
+
+    //con esto ago que el set se comporte como un arreglo
+    let arr = Array.from(set);
+    console.log(arr);
+    console.log(arr[9]);
+
+    //con esto borro un elemento del set
+    set.delete("HOLA");
+    console.log(set);
+
+    //con has compruebo si un dato  existe dentro del set
+    console.log(set.has("hola"));
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .numero {
+      width: 60px;
+      height: 60px;
+    }
+
+    .igual {
+      width: 133px;
+      height: 60px;
+    }
+
+    table {
+      margin: auto;
+    }
+
+    .color_display {
+      height: 30px;
+      background-color: #000;
+      border: medium #fff;
+      font: "8pace Age";
+      color: #0f0;
+      font-size: 18px;
+      text-align: right;
+      padding: 5px;
+      ;
+    }
+  </style>
+
+  <script>
+    let cifra = "";
+    let acumulado = 0;
+    let primer_operacion = true;
+    let sumar = false;
+    let restar = false;
+    let multi = false;
+    let divi = false;
+    /*ESTA FUNCION ES PARA QUE ME PERMITA ESCRIBIR LOS NUMEROS EN EL IMPUT*/
+    //esta la llamo desde desdeca cada uno de los botones que contienen un numero en la table.
+    function displayNumeros(numero) {
+      document.getElementById("display").value = cifra + numero; //la variable cifra es para que me concatene cuando precione mas numeros.
+      cifra = document.getElementById("display").value;
+    }
+    /***************************************************************************************/
+    //SUMA esto lo llamo des el signio +
+    /***************************************************************************************/
+    function suma() {
+      if (restar) {
+        acumulado = acumulado - parseInt(cifra);
+        document.getElementById("display").value = acumulado;
+      } else if (multi) {
+        acumulado = acumulado * parseInt(cifra);
+        document.getElementById("display").value = acumulado;
+      } else {
+        acumulado = acumulado + parseInt(cifra);
+        document.getElementById("display").value = acumulado;
+      }
+      cifra = "";
+      sumar = true;
+      restar = false;
+      multi = false;
+    }
+    /*******************************************************************************/function resta() {
+      if (primer_operacion == false) {
+        if (sumar) {
+          acumulado = acumulado + parseInt(cifra);
+          document.getElementById("display").value = acumulado;
+        } else if (multi) {
+          acumulado = acumulado * parseInt(cifra);
+          document.getElementById("display").value = acumulado;
+        } else {
+          acumulado = acumulado - parseInt(cifra);
+          document.getElementById("display").value = acumulado;
+        }
+      } else {
+        acumulado = parseInt(cifra);
+        primer_operacion = false;
+      }
+      cifra = "";
+      restar = true;
+      sumar = false;
+      multi = false;
+    }
+    /************************************************************/
+    function multiplicar() {
+      if (primer_operacion == false) {
+        if (sumar) {
+          acumulado = acumulado + parseInt(cifra);
+          document.getElementById("display").value = acumulado;
+        }
+        acumulado = acumulado * parseInt(cifra);
+        document.getElementById("display").value = acumulado;
+
+      } else {
+        acumulado = parseInt(cifra);
+        primer_operacion = false;
+      }
+      cifra = "";
+      multi = true;
+      sumar = false;
+    }
+
+    function Dividir() {
+      if (primer_operacion == false) {
+        if (sumar) {
+          acumulado = acumulado + parseInt(cifra);
+          document.getElementById("display").value = acumulado;
+        }
+        acumulado = acumulado / parseInt(cifra);
+        document.getElementById("display").value = acumulado;
+
+      } else {
+        acumulado = parseInt(cifra);
+        primer_operacion = false;
+      }
+      cifra = "";
+      sumar = false;
+      divi = true;
+
+    }
+    //esto lo llamo desde el signo = 
+    function resultado() {
+      if (sumar) {
+        document.getElementById("display").value = acumulado + parseInt(cifra);
+      } else if (restar) {
+        document.getElementById("display").value = acumulado - parseInt(cifra);
+      } else if (multi) {
+        document.getElementById("display").value = acumulado * parseInt(cifra);
+      } else if (divi) {
+        document.getElementById("display").value = acumulado / parseInt(cifra);
+      }
+
+      /* acumulado = parseInt(document.getElementById("display").value);
+       cifra = 0;*/
+    }
+  </script>
+</head>
+
+<body>
+  <table width="15%" border="1">
+    <tr>
+      <td colspan="4" align="center">
+        <input name="display" type="text" class="color_display" id="display" size="25">
+      </td>
+    </tr>
+
+    <tr>
+      <td width="26%"><input name="button" type="button" class="numero" id="button" onclick="suma()" value="+"></td>
+      <td width="26%"><input name="button2" type="button" class="numero" id="button2" onclick="resta()" value="-"></td>
+      <td width="26%"><input name="button3" type="button" class="numero" id="button3" onclick="multiplicar()" value="x">
+      </td>
+      <td width="26%"><input name="button4" type="button" class="numero" id="button4" value="/" onclick="Dividir()">
+      </td>
+    </tr>
+
+    <tr>
+      <td><input name="num7" type="button" class="numero" id="num7" onclick="displayNumeros(7)" value="7"></td>
+      <td><input name="num8" type="button" class="numero" id="num8" onclick="displayNumeros(8)" value="8"></td>
+      <td><input name="num9" type="button" class="numero" id="num9" onclick="displayNumeros(9)" value="9"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td><input name="num4" type="button" class="numero" id="num4" onclick="displayNumeros(4)" value="4"></td>
+      <td><input name="num5" type="button" class="numero" id="num5" onclick="displayNumeros(5)" value="5"></td>
+      <td><input name="num6" type="button" class="numero" id="num6" onclick="displayNumeros(6)" value="6"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td><input name="num1" type="button" class="numero" id="num1" onclick="displayNumeros(1)" value="1"></td>
+      <td><input name="num2" type="button" class="numero" id="num2" onclick="displayNumeros(2)" value="2"></td>
+      <td><input name="num3" type="button" class="numero" id="num3" onclick="displayNumeros(3)" value="3"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td><input name="num0" type="button" class="numero" id="num0" onclick="displayNumeros(0)" value="0"></td>
+      <td><input name="button17" type="button" class="numero" id="button17" value="."></td>
+      <td colspan="2"><input name="button12" type="button" class="igual" id="button12" onclick="resultado()" value="=">
+      </td>
+    </tr>
+  </table>
+
+
+  <!--Esto es para que cuando entre me aparesca el cero en la pantallita-->
+  <script>
+    document.getElementById("display").value = 0;
+  </script>
+
+</body>
+
+</html>

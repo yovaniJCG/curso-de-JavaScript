@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		.contenedor{
+			width: 25%;
+			background-color: #FFC;
+			margin: auto;
+			padding: 15px;
+		}
+	</style>
+
+
+<script type="text/javascript">
+	var nombre, edad, poblacion;
+        
+        do{
+		nombre=prompt("Introduce tu nombre por favor","Escribe aqui tu nombre");
+
+		}while(!isNaN(nombre));
+           
+
+		do{
+
+		edad= prompt("Que edad tienes?","introduce aqui tu edad");
+
+		}while(edad<=0 || edad>105 || isNaN(edad));
+         
+        
+		
+        do{
+		poblacion= prompt("Introduce tu poblacion");
+
+		}while(!isNaN(poblacion));
+
+		</script>
+
+</head>
+<body>
+
+
+	<div class="contenedor">
+		
+		<p>Nombre :
+
+			<script type="text/javascript">
+				
+				document.write(nombre);
+
+			</script>
+		</p>
+
+
+		<p>Edad:
+
+			<script type="text/javascript">
+				
+				document.write(edad);
+			</script>
+
+		</p>
+
+
+		<p>Poblacion:
+
+         <script type="text/javascript">
+         	document.write(poblacion);
+         </script>
+
+		</p>
+
+	</div>
+
+    
+   
+</body>
+</html>

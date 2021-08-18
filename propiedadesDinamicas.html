@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const objUsuarios = {};
+    const usuarios = ["Juan", "Pedro", "Maria", "Karla", "Kenia"];
+
+    usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+
+    console.log(objUsuarios);
+
+    /************this****************/
+
+    function imprimir() {
+
+      console.log(this.nombre);
+
+    }
+
+    imprimir();
+
+    const obj = {
+      nombre: "Contexto objeto",
+      imprimir: function () {
+        console.log(this.nombre);
+      }
+    }
+
+    obj.imprimir();
+    const obj2 = {
+      nombre: "Contexto Objeto2",
+      imprimir
+    }
+
+    obj2.imprimir();
+
+    const obj3 = {
+      nombre: "Contexto Objeto3",
+      imprimir: function () {
+        console.log(this.nombre);
+      }
+    }
+
+    obj3.imprimir();
+  </script>
+
+</body>
+
+</html>

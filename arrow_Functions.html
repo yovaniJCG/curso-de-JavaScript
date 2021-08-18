@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /*******************************************/
+    const saludar = () => {
+      console.log("Hola");
+    }
+
+    saludar();
+    /***********************************************/
+
+    //otro  ejemplo
+
+    /* const sumar = function (a, b) {
+       return a + b;
+     }*/
+
+    const sumar = (a, b) => a + b;//este es otro ejemmplo de una arrow funtions.
+    console.log(sumar(5, 5));
+
+    /*******************************************/
+    const funcionDeVariasLineas = () => {
+      console.log("uno"),
+        console.log("Dos"),
+        console.log("tres");
+    }
+
+    funcionDeVariasLineas();
+    /***********************************************/
+    const numeros = [1, 2, 3, 4, 5];
+
+    numeros.forEach((el, index) => console.log(`${el} esta en la posicion ${index}`));
+
+    /**********************************************/
+
+
+  </script>
+
+</body>
+
+</html>

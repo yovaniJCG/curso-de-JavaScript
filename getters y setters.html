@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    class Animal {
+      constructor(nombre, genero) {
+        this.nombre = nombre;
+        this.genero = genero;
+      }
+      sonar() {
+        console.log("Hago sonidos por que estoy vivo");
+      }
+
+      saludar() {
+        console.log(`Hola me llamo ${this.nombre}`);
+      }
+
+    }
+
+    /*const mimi = new Animal("mimi", "Hembra");
+    const escooby = new Animal("escooby", "Macho");*/
+
+    //heredar
+    class perro extends Animal {
+      constructor(nombre, genero, tamaño) {
+        //con el metodo super() se manda a llmar el constructor de la clase padre.
+        super(nombre, genero);
+        this.tamaño = tamaño;
+
+        //esto es para probar lo de get y set
+        this.raza = null;
+      }
+
+      sonar() {
+        console.log("soy un perro y mi sonido es un ladrido");
+      }
+
+      ladrar() {
+        console.log("GUAUUU GUAUUUU");
+      }
+
+      static queEres() {
+        console.log("somos mafiros y nos consideran que somos el mejor amigo del hombre");
+      }
+      /*****************get  y set**************/
+      get getRaza() {
+        return this.raza;
+      }
+
+      set setRaza(raza) {
+        this.raza = raza;
+      }
+      /**********************************************/
+    }
+
+    perro.queEres();
+
+    const mimi = new Animal("mimi", "Hembra");
+    const escooby = new perro("escooby", "Macho", "Gigante");
+
+    console.log(mimi);
+    mimi.saludar();
+    mimi.sonar();
+    console.log(escooby);
+    escooby.sonar();
+    escooby.ladrar();
+
+    /****llamo lo de get*****/
+    console.log(escooby.getRaza);
+
+    /*****llamo lo de set y le doy el valor******/
+    escooby.setRaza = "pastor aleman";
+
+    /******aqui compruebo que se aya modificado y en ves de null aparesca pastor aleman*****/
+    console.log(escooby.getRaza);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    let nombre = "Juan";
+    let apellido = "Gomez";
+    let saludo = new String("Hola Mundo");
+    let loren = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto corporis repudiandae neque eaque ducimus quam culpa dolorem repellendus? Beatae aliquid minus ipsam! Possimus numquam quae temporibus, mollitia iusto deserunt sequi.";
+
+    console.log(nombre, apellido, saludo);
+    console.log(
+      nombre.length,
+      apellido.length,
+      saludo.length,
+      nombre.toUpperCase(),//esto lo convierte de todo minuscala a todo mayuscula.
+      apellido.toLowerCase(),//este lo pasa todo en minuscula
+      loren.includes("elit"),//esto es para ver si dentro de lo que tengo en la variable                       lorem escuentra esa palabra que le doy
+      loren.includes("juan")
+    )
+  </script>
+
+</body>
+
+</html>

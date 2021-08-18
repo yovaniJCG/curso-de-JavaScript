@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8"/>
+
+
+	
+</head>
+<body>
+
+<table width="25%" border="0">
+	<td><label for="textfield">Pista:</label>
+		<input type="text" name="textfield" id="c_mensaje"></td>
+
+	<td><label for="textfield2">Intentos:</label>
+		<input type="text" name="textfield2" id="c_intentos" style="background-color: grey;"></td>
+</table>
+
+
+<script type="text/javascript">
+/*.round me redondea los numeros y .Math me da numeros aleatorios*/ 
+var aleatorio=Math.round(Math.random()*100); /*aqui esta de  cero a 100*/
+
+var minum=0;
+
+intentos=0;
+
+var mensaje = document.getElementById("c_mensaje");
+
+var intentos_consumidos = document.getElementById("c_intentos");
+
+do{
+
+ minum=prompt("Introduce un numero entre 0 y 100");
+
+ if (aleatorio>minum) {
+  
+  mensaje.value="Mas alto";
+
+  mensaje.style.fontSize="18px";
+  
+ }
+
+ if (aleatorio<minum) {
+
+ 	mensaje.value="Mas bajo";
+ 	mensaje.style.fontSize="18px";
+ }
+
+ intentos++;
+
+ intentos_consumidos.value=intentos;
+ intentos_consumidos.style.color="red";
+ intentos_consumidos.style.fontSize="18px";
+ intentos_consumidos.style.textAlign="center";
+
+ }while(aleatorio!=minum);/*si el numero aleatorio es diferente al que yo ingreso en el promt entonces que se repita el codigo hasta que se igual al numero aleatorio que me genero Math.ramdom.*/
+
+mensaje.value="Has asertado el numero correcto";
+mensaje.style.color="green";
+ 
+</script>
+
+
+
+
+
+</body>
+</html>

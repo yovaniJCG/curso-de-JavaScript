@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    /*function escribeNombre(nombre) {
+      document.write(nombre);
+    }*/
+
+    const escribeNombre = (nombre = "") => (!nombre)
+      ? document.write("Usuario X")
+      : document.write(nombre);
+
+
+
+    let nombreUsuario = prompt("Escribe tu nombre", "Nombre Usuario");
+  </script>
+</head>
+
+<body>
+  <p style="font-size: 24px; font-weight: bold">
+    Hola:
+    <script>escribeNombre(nombreUsuario);</script>.Bienvenido a mi pagina web
+  </p>
+
+  <p>
+    Esta es una pagina web que trata de explicar el lenguaje de javascrip asi que
+    <script>escribeNombre(nombreUsuario)</script> , ya estas listo para empezar.
+  </p>
+</body>
+
+</html>

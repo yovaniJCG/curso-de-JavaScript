@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    function Animal(nombre, genero) {
+      //ATRIBUTOS
+      this.nombre = nombre;
+      this.genero = genero;
+
+
+    }
+    /************************************/
+    //METODOS
+    Animal.prototype.sonar = function () {//esta es una funcion constructora.
+      console.log("Hago sonidos raros");
+    }
+
+    Animal.prototype.saludar = function () {
+      console.log(`Hola me llamo ${this.nombre} `);
+    }
+
+    //herencia prototipica
+    function perro(nombre, genero, tamanio) {
+      this.super = Animal;//aqui invocamos la funcion padre Animal.
+      this.super(nombre, genero)
+      this.tamanio = tamanio;
+    }
+    //perro esta heredando de animal.
+    perro.prototype = new Animal();
+    perro.prototype.constructor = perro;
+
+    //sobreecritura de metodos del  prototipo padre en el hijo.
+
+    perro.prototype.sonar = function () {
+      console.log("soy un perro y mi sonido es un ladrido");
+    }
+
+    perro.prototype.ladrar = function () {
+      console.log("GUAUUU, GUAUUU");
+    }
+    /********************************************/
+    const snoopy = new perro("Snoopy", "Macho", "mediano");
+
+    const Lola = new Animal("Lola", "Hembra");
+
+    console.log(snoopy);
+    console.log(Lola);
+    snoopy.sonar();
+    snoopy.saludar();
+    snoopy.ladrar();
+    Lola.sonar();
+
+
+
+  </script>
+</body>
+
+</html>

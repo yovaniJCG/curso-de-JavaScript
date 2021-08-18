@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Documento sin título</title>
+  <style>
+    img {
+      float: left;
+      margin: 15px;
+      top: 15px;
+      width: 350px;
+      height: 200px;
+    }
+
+    #contenedor {
+      width: 75%;
+      margin: auto;
+    }
+  </style>
+
+  <script src="js/jquery-3.5.1.min.js"></script>
+
+  <script>
+
+    $(document).ready(function () {
+      document.getElementById("miboton").addEventListener("click", cambiar, false);
+    });
+
+    function cambiar() {
+      //  $("img").fadeOut(1000).fadeIn(1000).width("310");
+
+      $("img").each(function () {
+        $(this).fadeOut(1000).fadeIn(1000).width("310");
+      });
+    }
+
+
+  </script>
+
+</head>
+
+<body>
+
+  <div id="contenedor">
+
+    <img src="imagenes/arbol.png" alt="arbol">
+    <img src="imagenes/flores.png" alt="flores">
+    <img src="imagenes/lago.png" alt="lago">
+    <img src="imagenes/rayo.png" alt="rayo">
+
+  </div><br>
+
+  <div id="boton">
+    <input type="button" id="miboton" value="Accion">
+  </div>
+
+
+
+</body>
+
+</html>

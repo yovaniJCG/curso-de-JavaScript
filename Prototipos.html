@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*const animal = {
+      nombre: "Body",
+      sonar() {
+        console.log("Hago sonidos raros");
+      }
+
+    }
+
+    const animal2 = {
+      nombre: "Lola",
+      sonar() {
+        console.log("Yo tambien ago sonidos");
+      }
+    }
+
+    console.log(animal);
+    console.log(animal2);*/
+
+    /******************************************/
+
+    function Animal(nombre, genero) {
+      //ATRIBUTOS
+      this.nombre = nombre;
+      this.genero = genero;
+
+
+    }
+    /************************************/
+    //METODOS
+    Animal.prototype.sonar = function () {//esta es una funcion constructora.
+      console.log("Hago sonidos raros");
+    }
+
+    Animal.prototype.saludar = function () {
+      console.log(`Hola me llamo ${this.nombre} `);
+    }
+    /********************************************/
+    const snoopy = new Animal("Snoopy", "Macho");
+
+    const Lola = new Animal("Lola", "Hembra");
+
+    console.log(snoopy);
+    console.log(Lola);
+
+    snoopy.saludar();
+    Lola.sonar();
+
+
+  </script>
+</body>
+
+</html>
